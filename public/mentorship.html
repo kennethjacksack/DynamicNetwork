@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentorship Dashboard</title>
+    <link rel="stylesheet" href="Styles/mentorship.css">
+    <style>
+        /* Example of transition styles */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+        }
+
+        /* Additional transition styles for other elements if needed */
+        .transition-enabled {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="fade-in">
+            <h1>Mentorship Dashboard</h1>
+            <!-- Updated the link to point to home.html -->
+            <a href="index.html" class="back-button">Back to Home</a>
+        </header>
+        <main class="fade-in">
+            <section class="mentorship">
+                <h2>Suggested Mentors</h2>
+                <div class="mentor-list">
+                    <div class="mentor-card" data-mentor="1">
+                        <div class="mentor-header">
+                            <div class="mentor-header-left">
+                                <h3>Jane Smith</h3>
+                                <div class="mentor-badges">
+                                    <span class="badge">🏅 Top Data Scientist</span>
+                                    <span class="badge">🌟 Innovator</span>
+                                </div>
+                            </div>
+                            <div class="mentor-location">New York, NY</div>
+                        </div>
+                        <p>Expert in Data Science</p>
+                        <div class="mentor-credentials">
+                            <p><strong>Industry:</strong> Data Science</p>
+                            <p><strong>Company:</strong> Data Solutions</p>
+                        </div>
+                        <button class="request-btn">Request Mentorship</button>
+                    </div>
+                    <div class="mentor-card" data-mentor="2">
+                        <div class="mentor-header">
+                            <div class="mentor-header-left">
+                                <h3>Michael Johnson</h3>
+                                <div class="mentor-badges">
+                                    <span class="badge">🏅 Expert Coder</span>
+                                    <span class="badge">🌟 Problem Solver</span>
+                                </div>
+                            </div>
+                            <div class="mentor-location">San Francisco, CA</div>
+                        </div>
+                        <p>Software Engineering Specialist</p>
+                        <div class="mentor-credentials">
+                            <p><strong>Industry:</strong> Software Engineering</p>
+                            <p><strong>Company:</strong> Tech Corp</p>
+                        </div>
+                        <button class="request-btn">Request Mentorship</button>
+                    </div>
+                    <div class="mentor-card" data-mentor="3">
+                        <div class="mentor-header">
+                            <div class="mentor-header-left">
+                                <h3>Emily Davis</h3>
+                                <div class="mentor-badges">
+                                    <span class="badge">🏅 Marketing Strategist</span>
+                                    <span class="badge">🌟 Brand Builder</span>
+                                </div>
+                            </div>
+                            <div class="mentor-location">Austin, TX</div>
+                        </div>
+                        <p>Marketing Guru</p>
+                        <div class="mentor-credentials">
+                            <p><strong>Industry:</strong> Marketing</p>
+                            <p><strong>Company:</strong> Marketing Insights</p>
+                        </div>
+                        <button class="request-btn">Request Mentorship</button>
+                    </div>
+                </div>
+                <h2>Ongoing Relationships</h2>
+                <div class="relationship-list">
+                    <div class="relationship-card">
+                        <h3>Sarah Lee</h3>
+                        <p>Mentoring in Career Development</p>
+                        <button class="manage-btn">Manage</button>
+                    </div>
+                    <div class="relationship-card">
+                        <h3>James Brown</h3>
+                        <p>Mentoring in Financial Analysis</p>
+                        <button class="manage-btn">Manage</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for Requesting Mentorship -->
+    <div id="mentorship-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Mentor Information</h2>
+            <p id="mentor-info"></p>
+            <button id="confirm-request">Confirm Request</button>
+        </div>
+    </div>
+
+    <script src="Scripts/mentorship.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add the "show" class to the fade-in elements
+            document.querySelectorAll('.fade-in').forEach(el => el.classList.add('show'));
+
+            // Example of triggering transitions for other elements
+            const transitionElements = document.querySelectorAll('.transition-enabled');
+            transitionElements.forEach(el => el.classList.add('transition-enabled'));
+        });
+    </script>
+</body>
+</html>

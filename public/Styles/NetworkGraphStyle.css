@@ -1,0 +1,64 @@
+/* Main Graph Container */
+#network-graph {
+    position: relative; /* Adjusts the container position relative to its normal flow */
+    width: 100%; /* Make the SVG take up the full viewport width */
+    height: 600px; /* Adjust height as needed */
+    background-color: rgba(247, 248, 253, 0.8); /* Semi-transparent background */
+    z-index: 1000; /* Ensure it appears above other content */
+    bottom: 0; /* Aligns the graph to the bottom of the viewport */
+    left: 0;
+    right: 0;
+    margin-top: 100px; /* Add margin-top to push the graph down */
+    display: block; /* Make the graph visible initially */
+    box-shadow: 0 -4px 10px rgba(176, 176, 176, 0.2); /* Optional shadow for visibility */
+    overflow: hidden; /* Ensure no overflow issues with the graph */
+    border: 2px solid #ffffff; /* Add a border with a solid color */
+    border-radius: 2px; /* Optional: rounded corners */
+}
+
+/* SVG Styling */
+#network-graph svg {
+    width: 100%; /* Make the SVG fill the width of the container */
+    height: 100%; /* Make the SVG fill the height of the container */
+    display: block; /* Ensure SVG takes up full space without margins/paddings */
+}
+
+/* Node Styling */
+.node {
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s ease-in; /* Smooth transition for opacity */
+}
+
+/* Link Styling */
+.link {
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s ease-in; /* Smooth transition for opacity */
+}
+
+/* Label Styling */
+.label {
+    opacity: 0; /* Initially invisible */
+    transition: opacity 1s ease-in; /* Smooth transition for opacity */
+    font-family: 'Inter', sans-serif; /* Font family */
+    font-size: 14px; /* Font size */
+    fill: #333; /* Font color */
+}
+
+/* Apply the fade-in effect */
+.node.fade-in, .link.fade-in, .label.fade-in {
+    opacity: 1; /* Fully visible after the transition */
+}
+
+/* Animation for the fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.node.fade-in, .link.fade-in, .label.fade-in {
+    animation: fadeIn 4s forwards;
+}

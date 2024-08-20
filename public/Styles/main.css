@@ -1,0 +1,92 @@
+/* General body styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #1f2029;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style for the network visualization container */
+#network {
+    width: 100%;
+    height: 100vh; /* Full height to take up the entire viewport height */
+    background-color: #f0f0f0; /* Light background color for contrast */
+}
+
+/* Style for the Create Node and Edit Node buttons */
+#create-node-btn, #edit-node-btn {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom of the viewport */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.7;
+    height: 50px;
+    width: 150px;
+    background-color: #102770; /* Dark blue background */
+    color: #ffeba7; /* Light yellow text */
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 12px 25px rgba(16, 39, 112, 0.25);
+    cursor: pointer;
+    transition: background-color 200ms, color 200ms, transform 200ms;
+}
+
+/* Button hover state */
+#create-node-btn:hover, #edit-node-btn:hover {
+    background-color: #ffeba7; /* Light yellow background */
+    color: #102770; /* Dark blue text */
+    transform: translateX(-50%) scale(1.05); /* Slightly enlarge button on hover */
+}
+
+/* Button focus state */
+#create-node-btn:focus, #edit-node-btn:focus {
+    outline: none; /* Remove default focus outline */
+}
+
+/* Ensures the "Edit Node" button is hidden initially */
+#edit-node-btn {
+    display: none;
+}
+
+/* Modal styles */
+#modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px; /* Max width for larger screens */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -1,0 +1,169 @@
+/* Back to Home Button */
+.back-home-btn {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 2;
+    height: 50px;
+    width: 160px;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    background-color: #102770;
+    color: #ffeba7;
+    box-shadow: 0 12px 35px rgba(16, 39, 112, 0.25);
+    border-radius: 4px;
+    transition: all 200ms linear;
+    margin: 20px 0; /* Space between elements */
+    text-decoration: none;
+}
+
+.back-home-btn:hover {
+    background-color: #ffeba7;
+    color: #102770;
+}
+
+/* Message Box */
+.message-box {
+    font-family: 'Inter', sans-serif;
+    width: calc(100% - 180px); /* Adjust width to fit beside the button */
+    max-width: 800px; /* Constrain width for better readability */
+    padding: 15px;
+    border: 2px solid #102770;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9); /* Light background with slight transparency */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    margin: 20px 0; /* Space between elements */
+    font-size: 15px;
+    color: #333;
+    resize: none; /* Prevent resizing */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    height: 100px; /* Fixed height for consistent appearance */
+}
+
+/* Send Message Button */
+.send-message-btn {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 2;
+    height: 50px;
+    width: 160px;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    background-color: #102770;
+    color: #ffeba7;
+    box-shadow: 0 12px 35px rgba(16, 39, 112, 0.25);
+    border-radius: 4px;
+    transition: all 200ms linear;
+    margin: 20px 0; /* Space between elements */
+    text-decoration: none;
+}
+
+.send-message-btn:hover {
+    background-color: #ffeba7;
+    color: #102770;
+}
+
+/* Main Thread (Container for All Messages) */
+.thread-container {
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    max-width: 800px; /* Constrain width for better readability */
+    margin: 20px auto; /* Center align */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95); /* Light background for message display */
+    box-shadow: 0 12px 35px rgba(16, 39, 112, 0.25); /* Shadow for depth */
+    border-radius: 10px; /* Smooth corners */
+    overflow-y: auto; /* Enable scrolling if messages overflow */
+    max-height: 600px; /* Limit height for better UI control */
+}
+
+/* Individual Message Styling */
+.thread-message {
+    padding: 10px;
+    margin-bottom: 15px; /* Space between messages */
+    border-bottom: 1px solid #ddd; /* Divider between messages */
+    color: #333;
+}
+
+.thread-message:last-child {
+    border-bottom: none; /* Remove border from last message */
+}
+
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #1f2029;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://assets.codepen.io/209981/ice5.jpg');
+    background-blend-mode: saturation;
+    background-size: cover;
+    overflow: auto;
+
+    /* Fade/Blur Animation */
+    animation: fadeInBlur .4s ease-in-out forwards; /* Adjusted duration to 0.4s */
+    opacity: 1; /* Start fully transparent */
+    filter: blur(2px); /* Start with a blur */
+}
+
+/* Keyframes for the fade/blur animation */
+@keyframes fadeInBlur {
+    50% {
+        opacity: 0.99; /* Fully transparent */
+        filter: blur(.05px); /* Fully blurred */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        filter: blur(0px); /* No blur */
+    }
+}
+
+/* Ensure the main section has enough space for scrolling */
+main {
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Ensure that navigation buttons can be positioned absolutely */
+    transition: margin-left 0.3s ease; /* Smooth transition for margin change */
+}
+
+/* Title Styles */
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333; /* Dark color for visibility */
+    text-align: center;
+    margin: 0; /* Remove all margins */
+    position: relative; /* Ensure it stays in place */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: margin-left 0.3s ease; /* Smooth transition for container change */
+}

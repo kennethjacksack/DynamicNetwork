@@ -1,0 +1,34 @@
+/* Ribbon Effect */
+.ribbon {
+    position: fixed; /* Fixed position to keep it anchored at the top of the screen */
+    top: 0; /* Align with the top of the viewport */
+    left: 0; /* Align with the left edge of the viewport */
+    width: 150%; /* Make it span the full width of the screen */
+    height: 90px; /* Adjust height to cover the first inch of the screen */
+    background: #0044cc; /* Blue color */
+    opacity: 0.1; /* Make it more subtle */
+    z-index: -10; /* Ensure it's behind the text */
+    transform: scaleX(0) translateY(-20px); /* Hide initially with a slight upward offset */
+    animation: ribbonAnimation 1.5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+@keyframes ribbonAnimation {
+    0% {
+        transform: scaleX(0) translateY(-20px); /* Start hidden and slightly above */
+        opacity: 0; /* Start fully transparent */
+    }
+    50% {
+        transform: scaleX(1.05) translateY(0); /* Slight overshoot in scale */
+        opacity: 0.1; /* Increase opacity slightly */
+    }
+    100% {
+        transform: scaleX(1) translateY(0); /* Settle into final position */
+        opacity: 0.1; /* Return to subtle opacity */
+    }
+}
+
+/* Prevent body from scrolling horizontally */
+body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}

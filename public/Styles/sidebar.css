@@ -1,0 +1,222 @@
+/* Sidebar Styles */
+.sidebar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px; /* Expanded width */
+    background-color: #102770; /* Background color */
+    color: #1f2029; /* Dark text color for contrast */
+    padding: 60px 10px 10px; /* Add top padding to move contents down */
+    box-shadow: 0 12px 25px 0 rgba(199, 175, 189, 0.25); /* Box shadow */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    transition: width 0.5s ease, visibility 0.5s ease, opacity 0.5s ease, box-shadow 0.5s ease, padding 0.5s ease; /* Smooth transition for width, padding, visibility, opacity, and box-shadow */
+    visibility: visible;
+    opacity: 1;
+    z-index: 1000; /* Ensure it stays on top */
+    font-family: 'Inter', sans-serif; /* Set font to Inter */
+}
+
+/* Expanded state */
+.sidebar-container.expanded {
+    width: 250px; /* Expanded width */
+    padding: 60px 10px 10px; /* Keep padding consistent in expanded state */
+}
+
+/* Collapsed state */
+.sidebar-container.collapsed {
+    width: 50px; /* Collapsed width (reduced further) */
+    padding: 60px 5px 10px; /* Adjust padding to align contents properly */
+    visibility: visible; /* Ensure it remains visible */
+    opacity: 1; /* Keep it fully opaque */
+    box-shadow: none; /* Remove shadow when collapsed */
+}
+
+/* Expand Button */
+.sidebar-expand-button {
+    position: fixed; /* Fixed position for visibility */
+    top: 10px; /* Space from top */
+    left: 10px; /* Space from left */
+    background-color: #102770; /* Background color */
+    color: #fff; /* Text color */
+    border: none;
+    padding: 0; /* No padding */
+    border-radius: 8px; /* Rounded corners for a more polished look */
+    cursor: pointer;
+    font-size: 14px; /* Slightly smaller font size */
+    height: 36px; /* Slightly smaller height */
+    width: 36px; /* Square width */
+    z-index: 1100; /* Ensure it stays on top of the sidebar */
+    transition: background-color 0.3s ease, color 0.3s ease, width 0.3s ease; /* Added transitions for width */
+    display: flex; /* Flexbox for centering icon */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Collapsed state: square button */
+.sidebar-container.collapsed .sidebar-expand-button {
+    width: 36px; /* Square width */
+}
+
+/* Expanded state: rectangular button */
+.sidebar-container.expanded .sidebar-expand-button {
+    width: 72px; /* Rectangular width */
+}
+
+/* Hover effect for the expand button */
+.sidebar-expand-button:hover {
+    background-color: #ffeba7; /* Hover background color */
+    color: #102770; /* Hover text color */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Faint border on hover */
+}
+
+/* Add a more polished icon */
+.sidebar-expand-button i {
+    font-size: 16px; /* Adjust icon size */
+    transition: font-size 0.7s ease; /* Slower transition for icon size */
+}
+
+/* Adjust the logo name */
+.logo-name-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the button */
+    margin-bottom: 5px; /* Reduced margin */
+    transition: width 0.5s ease; /* Smooth transition for width */
+}
+
+.logo-name__name {
+    font-size: 14px; /* Slightly smaller font size */
+    font-weight: 500;
+    color: #1f2029;
+    transition: opacity 0.5s ease, margin-left 0.5s ease, transform 0.5s ease; /* Smooth fade and margin transition */
+}
+
+.sidebar-container.collapsed .logo-name__name {
+    opacity: 0; /* Fade out text when collapsed */
+    margin-left: 0; /* Reset margin when collapsed */
+    transform: translateX(-50%); /* Center title in collapsed state */
+}
+
+/* Adjust the feature and category items */
+.features-list,
+.category-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px; /* Reduced margin */
+}
+
+.features-item,
+.category-item {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items in collapsed mode */
+    width: 36px; /* Smaller width for collapsed mode */
+    height: 36px; /* Fixed height */
+    padding: 0; /* Remove padding */
+    margin-top: 4px; /* Reduced margin */
+    border: none; /* Remove border */
+    background: none; /* Remove background */
+    color: #fff; /* Default text color */
+    font-size: 14px; /* Smaller font size */
+    font-weight: 400;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: color 0.3s linear, padding 0.5s ease, box-shadow 0.5s ease, margin 0.5s ease; /* Smooth transition for color, padding, box-shadow, and margin */
+    position: relative; /* Needed for positioning icon */
+    text-align: center; /* Center text */
+    box-sizing: border-box; /* Include padding in width/height */
+}
+
+/* Adjustments for button size and spacing */
+.sidebar-container.expanded .features-item,
+.sidebar-container.expanded .category-item {
+    width: 100%; /* Full width in expanded state */
+    height: 40px; /* Fixed height */
+    justify-content: flex-start; /* Align items to the left in expanded mode */
+    padding-left: 10px; /* Add padding to push text away from the edge */
+}
+
+.features-item:hover,
+.category-item:hover {
+    color: #ffeba7; /* Hover icon color */
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.2); /* Subtle box shadow for hover effect */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Faint border on hover */
+}
+
+.features-item i,
+.category-item i {
+    font-size: 16px; /* Adjust icon size */
+    transition: font-size 0.7s ease, margin-left 0.7s ease; /* Slower transition */
+}
+
+/* Update icons */
+.features-item.profile-icon i {
+    font-family: 'Font Awesome 5 Free'; /* Ensure Font Awesome 5 Free is used */
+    content: "\f007"; /* Font Awesome user icon (profile) */
+}
+
+.features-item.mentorship-icon i {
+    font-family: 'Font Awesome 5 Free'; /* Ensure Font Awesome 5 Free is used */
+    content: "\f0c0"; /* Font Awesome users icon (mentorship) */
+}
+
+.sidebar-container.collapsed .features-item i,
+.sidebar-container.collapsed .category-item i {
+    font-size: 16px; /* Slightly larger icon size for collapsed state */
+}
+
+.features-item span,
+.category-item span {
+    margin-left: 0; /* Remove left margin for text */
+    position: absolute; /* Position text absolutely */
+    left: 40px; /* Space for text in expanded mode */
+    opacity: 1; /* Ensure text is visible */
+    transition: opacity 0.7s ease, visibility 0.7s ease, left 0.7s ease; /* Slower transition for text visibility and position */
+}
+
+.sidebar-container.collapsed .features-item span,
+.sidebar-container.collapsed .category-item span {
+    opacity: 0; /* Hide text */
+    visibility: hidden; /* Ensure text does not affect layout */
+    left: 0; /* Adjust position for hidden text */
+}
+
+.category-header {
+    font-size: 14px; /* Slightly smaller font size */
+    font-weight: 600; /* Heavier font weight */
+    color: #ffeba7; /* Standout color */
+    margin-bottom: 5px; /* Reduced margin */
+    transition: opacity 0.7s ease; /* Slower fade transition */
+    user-select: none; /* Prevent text selection */
+}
+
+.sidebar-container.collapsed .category-header {
+    opacity: 0; /* Fade out text when collapsed */
+}
+
+.nav-links {
+    border-top: 1px solid #ddd; /* Lighter border for separation */
+    margin-top: 10px; /* Space from previous content */
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    color: #1f2029;
+    text-decoration: none;
+    padding: 2px; /* Smaller padding */
+    border-radius: 4px;
+    margin-top: 4px; /* Reduced margin */
+    transition: background-color 0.3s linear;
+}
+
+.nav-link:hover {
+    background-color: #ffeba7; /* Hover background color */
+    color: #102770; /* Hover text color */
+}
+
+.nav-link i {
+    margin-right: 6px; /* Space between icon and text */
+    font-size: 14px; /* Slightly smaller font size */
+}

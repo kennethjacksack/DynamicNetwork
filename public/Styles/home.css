@@ -1,0 +1,180 @@
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #1f2029;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://assets.codepen.io/209981/ice5.jpg');
+    background-blend-mode: saturation;
+    background-size: cover;
+    overflow: auto;
+
+    /* Fade/Blur Animation */
+    animation: fadeInBlur .4s ease-in-out forwards; /* Adjusted duration to 1s */
+    opacity: 1; /* Start fully transparent */
+    filter: blur(2px); /* Start with a blur */
+}
+
+/* Keyframes for the fade/blur animation */
+@keyframes fadeInBlur {
+    50% {
+        opacity: 0.99; /* Fully transparent */
+        filter: blur(.05px); /* Fully blurred */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        filter: blur(0px); /* No blur */
+    }
+}
+
+/* Ensure the main section has enough space for scrolling */
+main {
+    padding: 20px;
+    margin-left: 260px; /* Default margin for sidebar width */
+    margin-bottom: 600px;
+    position: relative; /* Ensure that navigation buttons can be positioned absolutely */
+    transition: margin-left 0.3s ease; /* Smooth transition for margin change */
+}
+
+/* Title Styles */
+h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #333; /* Dark color for visibility */
+    text-align: center;
+    margin: 0; /* Remove all margins */
+    position: relative; /* Ensure it stays in place */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: margin-left 0.3s ease; /* Smooth transition for container change */
+}
+
+/* Button Styles */
+.btn-primary {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 2;
+    height: 50px;
+    width: 240px;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    background-color: #102770;
+    color: #ffeba7;
+    box-shadow: 0 12px 35px 0 rgba(16, 39, 112, .25);
+    border-radius: 4px;
+    transition: all 200ms linear;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: #ffeba7;
+    color: #102770;
+}
+
+/* Navigation Buttons Container */
+.navigation-buttons {
+    position: absolute; /* Position absolute to place it correctly within the main */
+    left: 0; /* Align with the far-left edge of the screen */
+    top: 20px; /* Adjusted to fit within the viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align buttons to the left */
+    gap: 10px; /* Space between buttons */
+    padding: 0; /* Ensure no padding affects the position */
+}
+
+/* Sidebar Styles */
+.sidebar-container {
+    position: fixed; /* Fixed position to stay in place */
+    top: 0;
+    left: 0;
+    width: 260px; /* Default width */
+    height: 100%;
+    background-color: #333;
+    z-index: 1000;
+    transition: width 0.3s ease;
+}
+
+/* Adjustments when the sidebar is collapsed */
+.sidebar-container.collapsed {
+    width: 60px; /* Narrower width when collapsed */
+}
+
+main,
+.container {
+    transition: transform 0.3s ease; /* Use transform for smooth transitions */
+}
+
+.sidebar-container.collapsed ~ main {
+    transform: translateX(-200px); /* Shift the content to the right when collapsed */
+}
+
+.sidebar-container.collapsed ~ .container {
+    transform: translateX(-200px); /* Shift the content to the right when collapsed */
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .btn-primary {
+        width: 200px;
+    }
+
+    main {
+        margin-left: 220px; /* Adjust margin for smaller sidebar */
+    }
+
+    .sidebar-container.collapsed ~ main {
+        margin-left: 60px; /* Adjust margin for collapsed sidebar */
+    }
+
+    .sidebar-container.collapsed ~ .container {
+        margin-left: 60px; /* Adjust margin for collapsed sidebar */
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        padding: 10px;
+    }
+
+    .btn-primary {
+        width: calc(100% - 40px);
+    }
+
+    main {
+        margin-left: 200px; /* Adjust margin for smaller sidebar */
+    }
+
+    .sidebar-container.collapsed ~ main {
+        margin-left: 60px; /* Adjust margin for collapsed sidebar */
+    }
+
+    .sidebar-container.collapsed ~ .container {
+        margin-left: 60px; /* Adjust margin for collapsed sidebar */
+    }
+}

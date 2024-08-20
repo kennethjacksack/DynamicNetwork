@@ -1,0 +1,239 @@
+/* General Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #1f2029;
+    background-color: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: background-color 0.2s ease, color 0.2s ease; /* Snappier transition for color and background color */
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: margin 0.2s ease; /* Snappier transition for margin changes */
+}
+
+/* Header */
+header {
+    padding: 20px 0;
+    text-align: center;
+    transition: padding 0.2s ease; /* Snappier transition for padding changes */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    transition: font-size 0.2s ease; /* Snappier transition for font size changes */
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #102770;
+    text-decoration: none;
+    background-color: #ffeba7;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease; /* Snappier transition for color and background color */
+}
+
+.back-button:hover {
+    background-color: #102770;
+    color: #ffeba7;
+}
+
+/* Main Section */
+main {
+    padding: 20px;
+    transition: padding 0.2s ease; /* Snappier transition for padding changes */
+}
+
+/* Mentorship Section */
+.mentorship {
+    padding: 20px;
+    transition: padding 0.2s ease; /* Snappier transition for padding changes */
+}
+
+.mentorship h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #102770;
+    transition: font-size 0.2s ease; /* Snappier transition for font size changes */
+}
+
+/* Mentor Cards */
+.mentor-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: gap 0.2s ease; /* Snappier transition for gap changes */
+}
+
+.mentor-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 15px;
+    position: relative;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease; /* Snappier transition for background color and box shadow */
+    animation: cardAnimation 0.5s ease; /* Unique animation for mentor cards */
+}
+
+@keyframes cardAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Mentor Header */
+.mentor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    transition: margin-bottom 0.2s ease; /* Snappier transition for margin bottom changes */
+}
+
+.mentor-header-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.mentor-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #102770;
+    transition: font-size 0.2s ease; /* Snappier transition for font size changes */
+}
+
+.mentor-badges {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+    transition: margin-top 0.2s ease; /* Snappier transition for margin top changes */
+}
+
+.badge {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 2px 6px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    transition: background-color 0.2s ease, color 0.2s ease; /* Snappier transition for background color and text color */
+}
+
+/* Location Styling */
+.mentor-location {
+    font-size: 0.875rem;
+    color: #555;
+    transition: color 0.2s ease; /* Snappier transition for text color */
+}
+
+/* Mentor Details */
+.mentor-credentials {
+    margin-top: 15px;
+    transition: margin-top 0.2s ease; /* Snappier transition for margin top changes */
+}
+
+.mentor-credentials p {
+    margin: 5px 0;
+    transition: margin 0.2s ease; /* Snappier transition for margin changes */
+}
+
+/* Button Styling */
+.request-btn {
+    background-color: #102770;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.1s ease, color 0.1s ease; /* Snappier transition for background color and text color */
+}
+
+.request-btn:hover {
+    background-color: #0d1a45;
+}
+
+.manage-btn {
+    background-color: #102770;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.1s ease, color 0.1s ease; /* Snappier transition for background color and text color */
+}
+
+.manage-btn:hover {
+    background-color: #0d1a45;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px; 
+    transition: opacity 0.2s ease; /* Snappier transition for opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: box-shadow 0.2s ease, border 0.2s ease; /* Snappier transition for box shadow and border */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.2s ease; /* Snappier transition for color */
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Confirm Request Button */
+#confirm-request {
+    background-color: #102770;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.1s ease, color 0.1s ease; /* Snappier transition for background color and text color */
+}
+
+#confirm-request:hover {
+    background-color: #0d1a45;
+}

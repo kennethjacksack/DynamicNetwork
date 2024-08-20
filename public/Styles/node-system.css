@@ -1,0 +1,15 @@
+/* node-system.css */
+
+/* Style for nodes */
+.node {
+    fill: #102770 !important; /* Dark blue color for nodes, use !important to enforce it */
+    stroke: #ffffff !important; /* White stroke around nodes, use !important to enforce it */
+    stroke-width: 2px !important; /* Stroke width */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Hover effect for nodes */
+.node:hover {
+    fill: #2852a0 !important; /* Lighter blue on hover */
+    stroke: #ffd700 !important; /* Golden border on hover */
+}
